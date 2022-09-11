@@ -3,23 +3,13 @@ void setRoomTemp();
 void setEngineTemp();
 void displayReadings();
 
-typedef enum states {
+ enum  states{
 	OFF, ON,
 };
 
-const char* getState(enum states state) {
-	switch (state) {
-	case OFF:
-		return "OFF";
-		break;
-	case ON:
-		return "ON";
-		break;
-	}
+const char* getState(enum states state);
 
-}
-
-typedef struct vehicle {
+ struct vehicle {
 	int speed;
 	int RoomTemp;
 	int EngineTemp;
@@ -27,4 +17,5 @@ typedef struct vehicle {
 	enum states Engine;
 	enum states TempController;
 };
+
 

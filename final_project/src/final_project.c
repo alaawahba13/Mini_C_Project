@@ -10,7 +10,7 @@
 #include <stdlib.h>
 #include "project.h"
 //intialize the vehicle sensor values.
-struct vehicle vehicle = { 30, 30, 30, OFF, OFF, OFF };
+ struct vehicle vehicle = { 30, 30, 30, OFF, OFF, OFF };
 int main()
 
 {
@@ -123,4 +123,15 @@ void displayReadings() {
 	printf("\nRoom Temperature is %d C", vehicle.RoomTemp);
 	printf("\nEngine Temperature Controller is %s", getState(vehicle.TempController));
 	printf("\nEngine Temperature is %d C\n", vehicle.EngineTemp);
+}
+const char* getState( enum states state) {
+	switch (state) {
+	case OFF:
+		return "OFF";
+		break;
+	case ON:
+		return "ON";
+		break;
+	}
+
 }
